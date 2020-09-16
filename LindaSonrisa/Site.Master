@@ -1,0 +1,207 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LindaSonrisa.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>| Linda Sonrisa</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="img/teeth-icon.png" rel="shortcut icon" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div id="preloder">
+            <div class="loader">
+            </div>
+        </div>
+
+        <header class="header-section">
+            <div class="container">
+                <!-- Site Logo -->
+                <!-- responsive -->
+                <div class="nav-switch">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <!-- Main Menu -->
+                <ul class="main-menu">
+                    <li><a runat="server" href="~/">Inicio</a></li>
+                    <li><a runat="server" href="~/About.aspx">Sobre Nosotros</a></li>
+                    <li><a runat="server" href="~/Servicios.aspx">Servicios</a></li>
+                    <li><a runat="server" href="~/Contact.aspx">Contáctanos</a></li>
+                    <li><a runat="server" href="~/Login.aspx">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            <div class="header-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 hi-item">
+                            <div class="hs-icon">
+                                <img src="img/icons/map-marker.png" alt="">
+                            </div>
+                            <div class="hi-content">
+                                <h6>Dental Street 20199</h6>
+                                <p>Denver, USA</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 hi-item">
+                            <div class="hs-icon">
+                                <img src="img/icons/clock.png" alt="">
+                            </div>
+                            <div class="hi-content">
+                                <h6>Horarios de apertura</h6>
+                                <p>Lun - Sáb: 8:00 - 19:00</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 hi-item">
+                            <div class="hs-icon">
+                                <img src="img/icons/phone.png" alt="">
+                            </div>
+                            <div class="hi-content">
+                                <h6>+885 332 1568</h6>
+                                <p>Llámenos!</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 hi-item">
+                            <div class="hs-icon">
+                                <img src="img/icons/calendar.png" alt="">
+                            </div>
+                            <div class="hi-content">
+                                <h6>Calle Observatorio 20199</h6>
+                                <p>La Pintana, Chile</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <section class="footer-top-section set-bg" data-setbg="img/footer-bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="footer-widget">
+                            <div class="fw-about">
+                                <p>Odontólogos generales y especialistas con formación de post grado que pueden realizar su trabajo de acuerdo a los más altos estándares, apoyados con equipos de alta tecnología y usando instrumentos e insumos de primera calidad.</p>
+                                <div class="fw-social">
+                                    <a href=""><i class="fa fa-pinterest"></i></a>
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                    <a href=""><i class="fa fa-dribbble"></i></a>
+                                    <a href=""><i class="fa fa-behance"></i></a>
+                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-5">
+                        <div class="footer-widget">
+                            <div class="fw-links">
+                                <h5 class="fw-title">Nuestros Servicios</h5>
+                                <ul>
+                                    <li><a href="">Implantes Dentales</a></li>
+                                    <li><a href="">Brackets</a></li>
+                                    <li><a href="">Muelas del juicio</a></li>
+                                    <li><a href="">Carillas de porcelana</a></li>
+                                    <li><a href="">Blanqueamiento dental</a></li>
+                                    <li><a href="">Prótesis dentales</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-7">
+                        <div class="footer-widget">
+                            <div class="fw-timetable">
+                                <div class="fw-title">Horarios de apertura</div>
+                                <div class="timetable-content">
+                                    <table>
+                                        <tr>
+                                            <td>Lunes</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Martes</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Miércoles</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jueves</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Viernes</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sábados</td>
+                                            <td>8:00am - 12:00pm</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer-section">
+            <div class="container">
+                <div class="copyright">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Clínica Dental Linda Sonrisa © Todos los derechos reservados
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
+            </div>
+        </footer>
+
+
+    </form>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
