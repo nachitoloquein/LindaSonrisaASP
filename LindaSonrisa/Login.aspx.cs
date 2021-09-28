@@ -5,9 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Data;
-using System.Security.Cryptography;
-using System.Text;
+using System.Data;  
 
 namespace LindaSonrisa
 {
@@ -36,7 +34,7 @@ namespace LindaSonrisa
             {
                 Session["Usuario"] = txtUser.Value.ToString();
                 Response.Redirect("BandejaEntrada/BandejaEntrada.aspx");
-
+               
             }
             else
             {

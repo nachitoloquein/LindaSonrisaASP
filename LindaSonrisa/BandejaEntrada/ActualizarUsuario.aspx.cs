@@ -23,7 +23,7 @@ namespace LindaSonrisa.BandejaEntrada
                 }
                 catch (Exception ex)
                 {
-                    Response.Redirect("../Login.aspx");
+                    Response    .Redirect("../Login.aspx");
                 }
 
                 CargarComboEmpleado();

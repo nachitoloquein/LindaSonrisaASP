@@ -40,18 +40,25 @@ namespace LindaSonrisa.Admin
 
         protected void btnAgregar_click(object sender, EventArgs e)
         {
-            if (sqlcon.State == ConnectionState.Closed)
-                sqlcon.Open();
-            SqlCommand sqlcmd = new SqlCommand("AgregarActualizarUsuario", sqlcon);
-            sqlcmd.CommandType = CommandType.StoredProcedure;
-            sqlcmd.Parameters.AddWithValue("@id", (hfId.Value == "" ? 0 : Convert.ToInt32(hfId.Value)));
-            sqlcmd.Parameters.AddWithValue("@nombreUsuario", txtNombreUsuario.Value);
-            sqlcmd.Parameters.AddWithValue("@contrasena", Encrypt(txtContrasena.Value));
-            sqlcmd.Parameters.AddWithValue("@correo", txtCorreo.Value);
-            sqlcmd.ExecuteNonQuery();
-            sqlcon.Close();
-            limpiarUsuario();
-            cargarDatos();
+            try
+            {
+                if (sqlcon.State == ConnectionState.Closed)
+                    sqlcon.Open();
+                SqlCommand sqlcmd = new SqlCommand("AgregarActualizarUsuario", sqlcon);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@id", (hfId.Value == "" ? 0 : Convert.ToInt32(hfId.Value)));
+                sqlcmd.Parameters.AddWithValue("@nombreUsuario", txtNombreUsuario.Value);
+                sqlcmd.Parameters.AddWithValue("@contrasena", Encrypt(txtContrasena.Value));
+                sqlcmd.Parameters.AddWithValue("@correo", txtCorreo.Value);
+                sqlcmd.ExecuteNonQuery();
+                sqlcon.Close();
+                limpiarUsuario();
+                cargarDatos();
+            }
+            catch
+            {
+
+            }
         }
 
         void cargarDatos()
